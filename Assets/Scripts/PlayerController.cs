@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private float lookSpeed;
     [SerializeField]
     private Transform followTarget;
+    private LevelManager levelManager;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
-
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -41,13 +43,37 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext callbackContext)
     {
+
         if(callbackContext.phase == InputActionPhase.Started)
         {
             animator.SetBool("Shooting", true);
+            GameManager.instance.GetGameData.Weapons[GameManager.instance.GetGameData.WeaponIndex].Triggered();
+            playerInput.actions["Reload"].Disable();
+
         }
         else if(callbackContext.phase == InputActionPhase.Canceled)
         {
             animator.SetBool("Shooting", false);
+            GameManager.instance.GetGameData.Weapons[GameManager.instance.GetGameData.WeaponIndex].TriggerReleased();
+            playerInput.actions["Reload"].Enable();
         }
+    }
+
+    public void Reload(InputAction.CallbackContext callbackContext)
+    {
+        if(callbackContext.phase == InputActionPhase.Performed)
+        {
+            //animacion de recarga
+            animator.SetTrigger("Reload");
+            GameManager.instance.GetGameData.Weapons[GameManager.instance.GetGameData.WeaponIndex].Reload();
+            levelManager.UpdateBullets();
+            playerInput.actions["Shoot"].Disable();
+            Debug.Log("Hago el reload");
+        }
+    }
+
+    public void CanShoot()
+    {
+        playerInput.actions["Shoot"].Enable();
     }
 }
