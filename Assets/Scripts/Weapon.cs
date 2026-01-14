@@ -68,6 +68,25 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    public void EnemyShoot(Transform _player)
+    {
+        if (timePass >= fireRate)
+        {
+            if (currentBullets > 0)
+            {
+                GameObject bulletClone = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                Vector3 direction = ((_player.position+new Vector3(0,1.5f,0)) - bulletSpawnPoint.position).normalized;
+                bulletClone.GetComponent<Rigidbody>().linearVelocity = direction * bulletSpeed;
+                timePass = 0;
+                currentBullets--;
+            }
+            else
+            {
+                //Reload
+            }
+        }
+    }
+
     public void Triggered()//Aprieta el gatillo
     {
         triggeredPress = true;

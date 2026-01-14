@@ -76,4 +76,9 @@ public class PlayerController : MonoBehaviour
     {
         playerInput.actions["Shoot"].Enable();
     }
+
+    public void TakeDamage(float _damage)
+    {
+
+    }
 }

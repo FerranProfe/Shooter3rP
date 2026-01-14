@@ -12,6 +12,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private Transform[] patrolPoints;
     private int patrolIndex;
+    [SerializeField]
+    private float life;
+    [SerializeField]
+    private Weapon weapon;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +34,14 @@ public class EnemyController : MonoBehaviour
             agent.stoppingDistance = 10;
             animator.SetFloat("Vertical", 1f);
             agent.SetDestination(player.position);
+            float distance = (player.position - transform.position).magnitude;
+            if (distance <= 10)
+            {
+                //Disparar
+                animator.SetFloat("Vertical", 0);
+                transform.LookAt(player);
+                weapon.EnemyShoot(player);
+            }
         }
         else
         {
@@ -63,6 +75,23 @@ public class EnemyController : MonoBehaviour
                 }
             }
             Debug.DrawRay(transform.position + new Vector3(0, 1.65f, 0), (player.position - transform.position), Color.red);
+        }
+    }
+
+    public void TakeDamage(float _damage)
+    {
+        life-=_damage;
+        if (life <= 0)
+        {
+            //esta muerto
+            GameObject ragdollPrefab = (GameObject) Resources.Load("EnemyRagdoll");
+            Instantiate(ragdollPrefab, transform.position, transform.rotation);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            //sigue vivo y hacemos el hit reaction
+            animator.SetTrigger("Hit");
         }
     }
 }
