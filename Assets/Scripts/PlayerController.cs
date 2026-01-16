@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Transform followTarget;
     private LevelManager levelManager;
+    [SerializeField]
+    private float timeToStartHealth;
+    [SerializeField]
+    private float healthSpeed;
+    private IEnumerator corrutinaCurar;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -79,6 +85,38 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
+        if(corrutinaCurar != null)
+        {
+            StopCoroutine(corrutinaCurar);
+        }
+
+        GameManager.instance.GetGameData.CurrentLife -= _damage;
+        if (GameManager.instance.GetGameData.CurrentLife <= 0)
+        {
+            //Death
+            GameObject ragollPrefab = (GameObject) Resources.Load("SwatRagdoll");
+            Instantiate(ragollPrefab, transform.position, transform.rotation);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            corrutinaCurar = Health();
+            StartCoroutine(corrutinaCurar);
+        }
+        levelManager.UpdateLife();
+    }
+
+    IEnumerator Health()
+    {
+        yield return new WaitForSeconds(timeToStartHealth);
+
+        while(GameManager.instance.GetGameData.CurrentLife < GameManager.instance.GetGameData.MaxLife)
+        {
+            GameManager.instance.GetGameData.CurrentLife = Mathf.Clamp(GameManager.instance.GetGameData.CurrentLife + 
+                (healthSpeed*Time.deltaTime), 0, GameManager.instance.GetGameData.MaxLife);
+            levelManager.UpdateLife();
+            yield return null;
+        }
 
     }
 }

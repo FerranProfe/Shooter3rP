@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     private float life;
     [SerializeField]
     private Weapon weapon;
+    private bool reloading;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,21 +41,27 @@ public class EnemyController : MonoBehaviour
                 //Disparar
                 animator.SetFloat("Vertical", 0);
                 transform.LookAt(player);
-                weapon.EnemyShoot(player);
+                if (reloading == false)
+                {
+                    weapon.EnemyShoot(player);
+                }
             }
         }
         else
         {
-            agent.speed = speed * 0.5f;
-            animator.SetFloat("Vertical", 0.4f);
-            agent.SetDestination(patrolPoints[patrolIndex].position);
-            float distance = (patrolPoints[patrolIndex].position - transform.position).magnitude;
-            if (distance < 1)
+            if (patrolPoints.Length > 0)
             {
-                patrolIndex += 1;
-                if (patrolIndex >= patrolPoints.Length)
+                agent.speed = speed * 0.5f;
+                animator.SetFloat("Vertical", 0.4f);
+                agent.SetDestination(patrolPoints[patrolIndex].position);
+                float distance = (patrolPoints[patrolIndex].position - transform.position).magnitude;
+                if (distance < 1)
                 {
-                    patrolIndex = 0;
+                    patrolIndex += 1;
+                    if (patrolIndex >= patrolPoints.Length)
+                    {
+                        patrolIndex = 0;
+                    }
                 }
             }
         }
@@ -81,6 +88,7 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         life-=_damage;
+        following = true;
         if (life <= 0)
         {
             //esta muerto
@@ -93,5 +101,17 @@ public class EnemyController : MonoBehaviour
             //sigue vivo y hacemos el hit reaction
             animator.SetTrigger("Hit");
         }
+    }
+
+    public void Reload()
+    {
+        reloading = true;
+        animator.SetTrigger("Reload");
+        weapon.Reload();
+    }
+
+    public void FinishReload()
+    {
+        reloading=false;
     }
 }

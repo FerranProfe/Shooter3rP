@@ -196,6 +196,8 @@ MonoBehaviour:
   speed: 5
   lookSpeed: 5
   followTarget: {fileID: 1950914568}
+  timeToStartHealth: 3
+  healthSpeed: 2
 --- !u!114 &16534089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +645,10 @@ PrefabInstance:
     - target: {fileID: 1487774384131766, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
       propertyPath: m_Name
       value: AK74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487774384131766, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4519716788627816, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2245,9 +2251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   speed: 4
-  patrolPoints:
-  - {fileID: 166418256}
-  - {fileID: 170249417}
+  patrolPoints: []
   life: 10
   weapon: {fileID: 1946731746}
 --- !u!54 &758491797
@@ -2392,6 +2396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   bulletMagazine: {fileID: 495876090}
   totalBullets: {fileID: 1169525230}
+  volume: {fileID: 832575518}
 --- !u!4 &795072985
 Transform:
   m_ObjectHideFlags: 0
@@ -2417,7 +2422,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 120.72156
+      value: 140.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2425,23 +2430,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 128.24802
+      value: 158.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.06469872
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.9979049
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2449,7 +2454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -172.581
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2925ead7b66f204bb01f4d3f81dca70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2724,8 +2729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gameData:
-    currentLife: 0
-    maxLife: 0
+    currentLife: 15
+    maxLife: 15
     weapons:
     - {fileID: 1008270574}
     weaponIndex: 0
@@ -2774,6 +2779,9 @@ MonoBehaviour:
   totalBullets: 60
   bulletSpeed: 1000
   automatic: 0
+  reloadEnemy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1022231114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4989,11 +4997,26 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 546352558}
   bulletPrefab: {fileID: 1103011004884078330, guid: 3d3fb77ead2e5704fb826a13a52e451e, type: 3}
   fireRate: 1
-  currentBullets: 5
+  currentBullets: 30
   maxMagazine: 30
   totalBullets: 60
   bulletSpeed: 1000
   automatic: 0
+  reloadEnemy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758491794}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1950490916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5103,6 +5126,10 @@ PrefabInstance:
     - target: {fileID: 1103011004884078330, guid: 3d3fb77ead2e5704fb826a13a52e451e, type: 3}
       propertyPath: m_Name
       value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103011004884078330, guid: 3d3fb77ead2e5704fb826a13a52e451e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4340674876613887067, guid: 3d3fb77ead2e5704fb826a13a52e451e, type: 3}
       propertyPath: m_LocalPosition.x

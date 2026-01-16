@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class Weapon : MonoBehaviour
     private float timePass;
     private bool triggeredPress;
     private LevelManager levelManager;
+
+    public UnityEvent reloadEnemy;
 
     private void Start()
     {
@@ -83,6 +86,7 @@ public class Weapon : MonoBehaviour
             else
             {
                 //Reload
+                reloadEnemy.Invoke();
             }
         }
     }
