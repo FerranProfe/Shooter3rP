@@ -19,6 +19,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float healthSpeed;
     private IEnumerator corrutinaCurar;
+    [SerializeField]
+    private Transform rightHand, leftHand;
+    [SerializeField]
+    private GameObject grenadePrefab;
+    [SerializeField]
+    private Transform grenadeSpawnPoint;
+    private LineRenderer lineRenderer;
+    [SerializeField]
+    private float throwForce;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +37,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        lineRenderer = grenadeSpawnPoint.GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -38,6 +48,19 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Vertical", leftStickInput.y);
         Vector3 movement = ((transform.forward * leftStickInput.y) + (transform.right * leftStickInput.x)) * speed;
         rb.linearVelocity = new Vector3 (movement.x, rb.linearVelocity.y, movement.z);
+
+        //Line renderer granada
+        if(lineRenderer.enabled == true)
+        {
+            Vector3 speed = (Camera.main.transform.forward + Vector3.up) * throwForce;
+            lineRenderer.positionCount = 100;
+            for(int i = 0; i < lineRenderer.positionCount; i++)
+            {
+                float t /*t de tiempo*/= i * 0.1f;
+                Vector3 position = grenadeSpawnPoint.position + speed * t + 0.5f * Physics.gravity * t * t;
+                lineRenderer.SetPosition(i, position);
+            }
+        }
     }
 
     private void LateUpdate()
@@ -74,6 +97,7 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.GetGameData.Weapons[GameManager.instance.GetGameData.WeaponIndex].Reload();
             levelManager.UpdateBullets();
             playerInput.actions["Shoot"].Disable();
+            playerInput.actions["ThrowGrenade"].Disable();
             Debug.Log("Hago el reload");
         }
     }
@@ -81,6 +105,7 @@ public class PlayerController : MonoBehaviour
     public void CanShoot()
     {
         playerInput.actions["Shoot"].Enable();
+        playerInput.actions["ThrowGrenade"].Enable();
     }
 
     public void TakeDamage(float _damage)
@@ -118,5 +143,46 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
+    }
+
+    public void ThrowGrenade(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            animator.SetBool("Grenade", true);
+            //Cambiar el arma de mano
+            GameManager.instance.GetGameData.Weapons[GameManager.instance.GetGameData.WeaponIndex].transform.parent = leftHand;
+
+            //instanciar la granada
+            Instantiate(grenadePrefab, grenadeSpawnPoint.position, grenadeSpawnPoint.rotation, grenadeSpawnPoint);
+
+            //Que se muestre la linea de trayectoria
+            lineRenderer.enabled = true;
+
+            //Desactivar que se pueda disparar
+            playerInput.actions["Shoot"].Disable();
+        }
+
+        if (context.canceled) 
+        {
+            animator.SetBool("Grenade", false);
+            lineRenderer.enabled = false;
+        }
+    }
+
+    public void SoltarGranada()
+    {
+        Transform grenadeClone=grenadeSpawnPoint.GetChild(0);
+        grenadeClone.parent = null;
+        grenadeClone.GetComponent<Rigidbody>().isKinematic = false;
+        grenadeClone.GetComponent<Rigidbody>().linearVelocity = (Camera.main.transform.forward + Vector3.up) * throwForce;
+        grenadeClone.GetComponent<Collider>().enabled = true;
+        grenadeClone.GetComponent<Grenade>().countDownActive = true;
+    }
+
+    public void FinishGrenade()
+    {
+        CanShoot();
+        GameManager.instance.GetGameData.Weapons[GameManager.instance.GetGameData.WeaponIndex].transform.parent = rightHand;
     }
 }
