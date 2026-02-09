@@ -1,0 +1,419 @@
+fileFormatVersion: 2
+guid: 1a4c8b74ed2b83e47a6cc9b1357035fa
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PJ_PJ_New_Textura_PJ
+    second: {fileID: 2100000, guid: 4a8b9942ca17ad9469292dec0da1ea01, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 0
+      lastFrame: 191
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Anim_cientf_idle(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:PJ_Mesh
+      parentName: Anim_cientf_idle(Clone)
+      position: {x: -0, y: 0.0067926394, z: -0.110159755}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Leg_L
+      parentName: PJ:PJ_Mesh
+      position: {x: -0, y: -0.0067926394, z: 0.110159755}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Leg_R
+      parentName: PJ:PJ_Mesh
+      position: {x: -0, y: -0.0067926394, z: 0.110159755}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Body
+      parentName: PJ:PJ_Mesh
+      position: {x: -0, y: -0.0067926394, z: 0.110159755}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Sombreros
+      parentName: Anim_cientf_idle(Clone)
+      position: {x: 0.0003516388, y: 0.021626161, z: -0.14559974}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Sombrero0
+      parentName: PJ:Sombreros
+      position: {x: 0.07115645, y: 2.0975783, z: -0.3173898}
+      rotation: {x: -0.130794, y: -0.1479419, z: 0.0066802287, w: 0.9802865}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:ikHandleDer
+      parentName: Anim_cientf_idle(Clone)
+      position: {x: 0.2576413, y: 0.056994066, z: -0.19386138}
+      rotation: {x: 0, y: 0.10647254, z: -0, w: 0.9943157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:ikHandleIzq
+      parentName: Anim_cientf_idle(Clone)
+      position: {x: -0.25641644, y: 0.056994062, z: -0.093925394}
+      rotation: {x: 0, y: -0.23587297, z: -0, w: 0.97178394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Main
+      parentName: Anim_cientf_idle(Clone)
+      position: {x: -0.0003516364, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:PieIzq
+      parentName: PJ:Main
+      position: {x: -0.23660335, y: 0.070653796, z: -0.086639605}
+      rotation: {x: 0, y: -0.23587297, z: -0, w: 0.97178394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:PoleVectorIzq
+      parentName: PJ:PieIzq
+      position: {x: -1.4210854e-16, y: 0.10369465, z: 0.51320016}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:PuntaPieIzq
+      parentName: PJ:PieIzq
+      position: {x: -0.003475546, y: -0.011374198, z: 0.28477696}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:PieDer
+      parentName: PJ:Main
+      position: {x: 0.23730628, y: 0.0706538, z: -0.19188312}
+      rotation: {x: 0, y: 0.10647254, z: -0, w: 0.9943157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:PoleVectorDer
+      parentName: PJ:PieDer
+      position: {x: 7.105427e-17, y: 0.10369465, z: 0.51320016}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:PuntaPieDer
+      parentName: PJ:PieDer
+      position: {x: 0.005454374, y: -0.011374202, z: 0.28477693}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Root
+      parentName: PJ:Main
+      position: {x: 0.0003516364, y: 0.57154, z: 0}
+      rotation: {x: 0, y: 0.11357677, z: -0, w: 0.99352926}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Cadera
+      parentName: PJ:Root
+      position: {x: -0.0037905034, y: 0.29783162, z: 2.2191658e-17}
+      rotation: {x: -0.040996008, y: 0.079705104, z: 0.0032808136, w: 0.9959697}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz1Der
+      parentName: PJ:Cadera
+      position: {x: 0.42261058, y: 0.453288, z: -0.049973477}
+      rotation: {x: -0.085279614, y: 0.054436635, z: -0.25368556, w: 0.9619812}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz2Der
+      parentName: PJ:Braz1Der
+      position: {x: 0.36020252, y: -0.02646628, z: -0.0023535197}
+      rotation: {x: 0, y: -0, z: -0.224247, w: 0.97453237}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz3Der
+      parentName: PJ:Braz2Der
+      position: {x: 0.295259, y: -0.06314, z: -0.0016622999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz4Der
+      parentName: PJ:Braz3Der
+      position: {x: 0.22171, y: -0.04763, z: -0.0010769999}
+      rotation: {x: 0, y: -0, z: -0.15137275, w: 0.98847675}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:ManoDer
+      parentName: PJ:Braz4Der
+      position: {x: 0.25257, y: -0.069180004, z: -0.0010499}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:DedoDer
+      parentName: PJ:Braz4Der
+      position: {x: 0.12513, y: -0.15089999, z: 0.0008631}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Cabeza
+      parentName: PJ:Cadera
+      position: {x: 0.005502837, y: 0.42096698, z: 1.05481436e-16}
+      rotation: {x: -0.113605596, y: -0.3319332, z: -0.040306453, w: 0.9355691}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz1Izq
+      parentName: PJ:Cadera
+      position: {x: -0.41432586, y: 0.45329168, z: -0.049973503}
+      rotation: {x: -0.05528842, y: 0.088773474, z: 0.30105338, w: 0.9478551}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz2Izq
+      parentName: PJ:Braz1Izq
+      position: {x: -0.360203, y: -0.02647, z: -0.0023534999}
+      rotation: {x: 0, y: 0.45735642, z: -0, w: 0.8892835}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz3Izq
+      parentName: PJ:Braz2Izq
+      position: {x: -0.295259, y: -0.06314, z: -0.0016622999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Braz4Izq
+      parentName: PJ:Braz3Izq
+      position: {x: -0.22171, y: -0.04763, z: -0.0010769999}
+      rotation: {x: 0, y: -0, z: -0.03007751, w: 0.9995476}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:ManoIzq
+      parentName: PJ:Braz4Izq
+      position: {x: -0.25257, y: -0.069180004, z: -0.0010499}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:DedoIzq
+      parentName: PJ:Braz4Izq
+      position: {x: -0.12513, y: -0.15089999, z: 0.0008631}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PJ:Root
+      parentName: Anim_cientf_idle(Clone)
+      position: {x: -2.2552499e-17, y: 0.57154, z: -3.8924766e-18}
+      rotation: {x: 0.35503602, y: 0.78702295, z: -0.45989445, w: -0.20746416}
+      scale: {x: 1.0000001, y: 1, z: 1.0000004}
+    - name: PJ:PierDer
+      parentName: PJ:Root
+      position: {x: -0.3253079, y: 0, z: -7.105427e-17}
+      rotation: {x: -0.23198086, y: -0.3420198, z: -0.08122806, w: -0.90697813}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: PJ:Pie1Der
+      parentName: PJ:PierDer
+      position: {x: -0.15271601, y: -0.0361869, z: -0.022968968}
+      rotation: {x: 0.39760405, y: 0.5669735, z: -0.58213687, w: -0.42610893}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000002}
+    - name: PJ:Pie2Der
+      parentName: PJ:Pie1Der
+      position: {x: 0.11273752, y: 0.020636491, z: 0.12168784}
+      rotation: {x: -0.8584063, y: -0.33609977, z: 0.2926859, w: 0.2539891}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.9999996}
+    - name: PJ:Pie3Der
+      parentName: PJ:Pie2Der
+      position: {x: -0.20990564, y: -0.15752892, z: 0.10521555}
+      rotation: {x: -0.001178324, y: 0.00028866524, z: -0.000047326077, w: 0.9999993}
+      scale: {x: 0.99999994, y: 0.9999997, z: 1.0000001}
+    - name: PJ:Cadera1
+      parentName: PJ:Root
+      position: {x: 0.22578293, y: 0.09536845, z: -0.16924827}
+      rotation: {x: -0.3481141, y: 0.23675835, z: -0.902453, w: 0.09132761}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: PJ:Cadera2
+      parentName: PJ:Cadera1
+      position: {x: -0.42100295, y: 2.5757173e-16, z: -2.4868996e-16}
+      rotation: {x: -0.00028976795, y: 0.0065291272, z: -0.044328604, w: 0.9989957}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: PJ:Cabeza1
+      parentName: PJ:Cadera2
+      position: {x: -0.40720987, y: -5.3290704e-17, z: 2.9790058e-15}
+      rotation: {x: 0.000000073021496, y: -0.0054345923, z: -0.0000000016612485, w: 0.9999852}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: PJ:Braz1Der
+      parentName: PJ:Cadera2
+      position: {x: -0.077917166, y: -0.29323253, z: -0.29234308}
+      rotation: {x: 0.034294214, y: -0.7317257, z: 0.036917288, w: 0.6797343}
+      scale: {x: 1, y: 1.0000002, z: 0.99999994}
+    - name: PJ:Braz2Der
+      parentName: PJ:Braz1Der
+      position: {x: -0.3611802, y: -2.3672084e-10, z: 0.00000032824966}
+      rotation: {x: -0.006442712, y: 0.05119286, z: 0.063757755, w: 0.9966307}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000006}
+    - name: PJ:Braz3Der
+      parentName: PJ:Braz2Der
+      position: {x: -0.30135378, y: -0.00022454122, z: -0.018724114}
+      rotation: {x: 0.0000000067407893, y: -0.05265866, z: -0.000000017418499, w: 0.9986126}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: PJ:MuDer
+      parentName: PJ:Braz3Der
+      position: {x: -0.22657308, y: 0.000000002324635, z: 0.0095991725}
+      rotation: {x: -0.0000000516908, y: 0.030029682, z: 0.000000033530462, w: 0.9995491}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: PJ:Ma1Der
+      parentName: PJ:MuDer
+      position: {x: -0.26116666, y: -1.1368684e-15, z: -0.019218963}
+      rotation: {x: -0, y: -0, z: -2.2204455e-16, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+    - name: PJ:Ma2Der
+      parentName: PJ:MuDer
+      position: {x: -0.1518554, y: -6.3948843e-16, z: -0.1239795}
+      rotation: {x: -0, y: -0, z: -2.2204455e-16, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+    - name: PJ:Braz1Izq
+      parentName: PJ:Cadera2
+      position: {x: 0.0024625522, y: 0.22808717, z: 0.35744727}
+      rotation: {x: -0.7317256, y: -0.034294162, z: -0.6797343, w: 0.036917295}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1}
+    - name: PJ:Braz2Izq
+      parentName: PJ:Braz1Izq
+      position: {x: 0.36118194, y: -0.00000003980274, z: 0.0000020776927}
+      rotation: {x: 0.0065726317, y: 0.026722882, z: -0.06618691, w: 0.99742776}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: PJ:Braz3Izq
+      parentName: PJ:Braz2Izq
+      position: {x: 0.3013577, y: 0.0002245956, z: 0.018729534}
+      rotation: {x: 0.000000045544628, y: -0.05265862, z: 0.00000001731614, w: 0.99861264}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.99999994}
+    - name: PJ:MuIzq
+      parentName: PJ:Braz3Izq
+      position: {x: 0.22656776, y: 0.00000003173106, z: -0.0095996335}
+      rotation: {x: -0.00000014107881, y: 0.03002961, z: 0.000000026974961, w: 0.99954903}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000004}
+    - name: PJ:Ma1Izq
+      parentName: PJ:MuIzq
+      position: {x: 0.2611688, y: -0.00000001351512, z: 0.019220488}
+      rotation: {x: -0, y: -0, z: -4.4408905e-16, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: PJ:Ma2Izq
+      parentName: PJ:MuIzq
+      position: {x: 0.15185434, y: -0.000000038570754, z: 0.12397312}
+      rotation: {x: -0, y: -0, z: -4.4408905e-16, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: PJ:PierIzq
+      parentName: PJ:Root
+      position: {x: -0.040803723, y: -0.15820602, z: 0.2807647}
+      rotation: {x: -0.34823558, y: 0.23549157, z: -0.90372837, w: 0.080937274}
+      scale: {x: 1, y: 0.9999999, z: 1.0000004}
+    - name: PJ:Pie1Izq
+      parentName: PJ:PierIzq
+      position: {x: 0.15271568, y: 0.03618687, z: 0.02296971}
+      rotation: {x: 0.3890886, y: 0.57009333, z: -0.5870623, w: -0.42303857}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: PJ:Pie2Izq
+      parentName: PJ:Pie1Izq
+      position: {x: -0.11273752, y: -0.020636, z: -0.12168784}
+      rotation: {x: 0.15827914, y: 0.10174767, z: 0.9819606, w: -0.01866844}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: PJ:Pie3Izq
+      parentName: PJ:Pie2Izq
+      position: {x: -0.27938357, y: -0.03490245, z: -0.027142307}
+      rotation: {x: -0.0007624002, y: 0.0006604898, z: 0.00016739975, w: 0.9999995}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000006}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

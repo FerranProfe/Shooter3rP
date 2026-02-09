@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 2
+  bulletHolePrefab: {fileID: 6144525337962936104, guid: f743cca61a5dc3b42accd277926c0802, type: 3}
 --- !u!1 &4231194965532159322
 GameObject:
   m_ObjectHideFlags: 0

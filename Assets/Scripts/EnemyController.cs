@@ -100,6 +100,7 @@ public class EnemyController : MonoBehaviour
         {
             //sigue vivo y hacemos el hit reaction
             animator.SetTrigger("Hit");
+            //AudioManager.instance.PlaySFX( , transform.position);
         }
     }
 
